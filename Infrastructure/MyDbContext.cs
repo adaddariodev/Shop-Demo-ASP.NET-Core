@@ -1,6 +1,7 @@
 ﻿using Core.Domain.Entities.Item;
 using Core.Domain.Entities.User;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -10,19 +11,20 @@ using System.Threading.Tasks;
 
 namespace Infrastructure
 {
-    public class MyDbContext : DbContext
-    {
-        private readonly IHttpContextAccessor _httpContextAccessor;
+    //IdentityDbContext is a class which has inherited from DbContext.
+    //To use Identities i need to inherit from IdentityDbContext instead of DbContext
 
-        public MyDbContext(DbContextOptions<MyDbContext> options, IHttpContextAccessor httpContextAccessor) : base (options)
+    public class MyDbContext : IdentityDbContext
+    {
+        public MyDbContext(DbContextOptions<MyDbContext> options) : base (options)
         {
-            _httpContextAccessor = httpContextAccessor;
         }
 
         public DbSet<CatalogueItem> Item { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder); //for IdentityDbContext
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(MyDbContext).Assembly);
 
             //add seed data here if you need!

@@ -12,5 +12,6 @@ namespace Core.Domain.Entities.Item
         public string Description { get; set; }
         public int Price { get; set; }
         public string ImagePath { get; set; }
+        public string User { get; set; }
     }
 }
