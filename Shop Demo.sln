@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "Shop Demo\UI.csproj", "{29DA6C63-DCF8-44EE-9E2C-70E3F82EBF49}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI", "Shop Demo\UI.csproj", "{29DA6C63-DCF8-44EE-9E2C-70E3F82EBF49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{1935A67D-AF19-4FB8-AD97-5749E8B3DD4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{1935A67D-AF19-4FB8-AD97-5749E8B3DD4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{4ED9F672-CBEC-4430-978B-A4E55A15C19B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{4ED9F672-CBEC-4430-978B-A4E55A15C19B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

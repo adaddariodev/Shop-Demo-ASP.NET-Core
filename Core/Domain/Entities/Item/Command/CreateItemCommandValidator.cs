@@ -32,10 +32,5 @@ namespace Core.Domain.Entities.Item.Command
             RuleFor(r => r.Price)
                 .GreaterThanOrEqualTo(0).WithMessage("{PropertyName} needs to be grater than 0.");
         }
-
-        private async Task<bool> IsItemUnique(CreateItemCommand i, CancellationToken token)
-        {
-            return !await _catalogueItemRepository.IsItemUnique(i.Name);
-        }
     }
 }

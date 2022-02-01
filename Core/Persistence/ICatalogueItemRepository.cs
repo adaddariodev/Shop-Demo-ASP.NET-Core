@@ -9,6 +9,5 @@ namespace Core.Persistence
 {
     public interface ICatalogueItemRepository : IAsyncRepository<CatalogueItem>
     {
-        Task<bool> IsItemUnique(string name);
     }
 }

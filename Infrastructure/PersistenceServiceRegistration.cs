@@ -1,4 +1,5 @@
 ﻿using Core.Persistence;
+using Core.Services.FileService;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -22,6 +23,9 @@ namespace Infrastructure
 
             //Repositories
             services.AddScoped<ICatalogueItemRepository, CatalogueItemRepository>();
+
+            //Services
+            services.AddScoped<IFileService, FileService>();
 
             return services;
         }

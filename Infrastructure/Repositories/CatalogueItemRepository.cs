@@ -14,10 +14,5 @@ namespace Infrastructure.Repositories
         {
 
         }
-
-        public Task<bool> IsItemUnique(string name)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
