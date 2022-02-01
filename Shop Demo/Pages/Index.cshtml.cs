@@ -18,6 +18,9 @@ namespace Shop_Demo.Pages
             _logger = logger;
         }
 
+        [BindProperty(SupportsGet = true)]
+        public string Handler { get; set; }
+
         public void OnGet()
         {
             

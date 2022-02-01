@@ -6,6 +6,18 @@
 
 <div class="container">
 
+    @if (Model.Handler != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+            <button type="button" class="btn float-right" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="alert-heading">Error!</h4>
+            <p>@Model.Handler</p>
+        </div>
+    }
+
+
     <div class="row">
 
         <div class="col-2">
@@ -40,5 +52,5 @@
         </div>
 
     </div>
-        
+
 </div>

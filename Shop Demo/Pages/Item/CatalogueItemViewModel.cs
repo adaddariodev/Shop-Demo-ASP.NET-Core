@@ -27,7 +27,6 @@ namespace Shop_Demo.Pages.Item
         [Required]
         [BindProperty]
         [Display(Name = "Upload Image")]
-
         public IFormFile FileUploaded { get; set; }
     }
 }
