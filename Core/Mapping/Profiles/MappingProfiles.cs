@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Core.Domain.Entities.Item;
 using Core.Domain.Entities.User;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace Core.Mapping.Profiles
 
         public MappingProfiles()
         {
-            CreateMap<Userx, UserDTO>().ReverseMap();
+            CreateMap<CatalogueItem, CatalogueItemDTO>().ReverseMap();
         }
 
     }

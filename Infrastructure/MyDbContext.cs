@@ -19,7 +19,6 @@ namespace Infrastructure
             _httpContextAccessor = httpContextAccessor;
         }
 
-        public DbSet<Userx> Users { get; set; }
         public DbSet<CatalogueItem> Item { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

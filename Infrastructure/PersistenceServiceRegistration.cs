@@ -20,7 +20,7 @@ namespace Infrastructure
 
             services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
 
-            services.AddScoped<IUserRepository, UserRepository>();
+            //Repositories
             services.AddScoped<ICatalogueItemRepository, CatalogueItemRepository>();
 
             return services;

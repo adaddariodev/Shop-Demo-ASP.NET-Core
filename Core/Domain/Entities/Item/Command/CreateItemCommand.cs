@@ -33,14 +33,12 @@ namespace Core.Domain.Entities.Item.Command
     {
         private readonly IMapper _mapper;
         private readonly ICatalogueItemRepository _catalogueItemRepository;
-        private readonly IUserRepository _userRepository;
         private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public CreateItemCommandHandler(IMapper mapper, ICatalogueItemRepository catalogueItemRepository, IUserRepository userRepository,IHttpContextAccessor httpContextAccessor)
+        public CreateItemCommandHandler(IMapper mapper, ICatalogueItemRepository catalogueItemRepository,IHttpContextAccessor httpContextAccessor)
         {
             _mapper = mapper;
             _catalogueItemRepository = catalogueItemRepository;
-            _userRepository = userRepository;
             _httpContextAccessor = httpContextAccessor;
         }
 

@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <Folder Include="Domain\Common\" />
-    <Folder Include="Domain\Entities\Item\Query\" />
   </ItemGroup>
 
   <ItemGroup>
