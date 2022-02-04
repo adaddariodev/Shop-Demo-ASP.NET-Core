@@ -14,5 +14,12 @@ namespace Infrastructure.Repositories
         {
 
         }
+
+        public async Task<bool> ItemExist(long id)
+        {
+            return _myDbContext.Set<CatalogueItem>()
+                .Select(x => x.Id == id)
+                .FirstOrDefault();
+        }
     }
 }

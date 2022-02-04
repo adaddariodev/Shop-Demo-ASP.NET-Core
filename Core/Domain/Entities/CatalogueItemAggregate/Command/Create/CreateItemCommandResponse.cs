@@ -1,16 +1,15 @@
-﻿using Core.Domain.Entities.CatalogueItemAggregate;
-using Core.Responses;
+﻿using Core.Responses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Domain.Entities.CatalogueItemAggregate.Command
+namespace Core.Domain.Entities.CatalogueItemAggregate.Command.Create
 {
     public class CreateItemCommandResponse : BaseResponse
     {
-        public CreateItemCommandResponse()
+        public CreateItemCommandResponse() : base()
         {
 
         }

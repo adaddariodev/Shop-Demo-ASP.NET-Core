@@ -55,7 +55,6 @@ namespace Shop_Demo.Pages.Item
                 if (FileUploaded.Length > 0)
                 {
                     var fileExtension = Path.GetExtension(Item.Name);
-                    //var contentType = GetMimeType(fileExtension);
 
                     var path = Path.Combine(_hostingEnvironment.WebRootPath, "Uploads", HttpContext.User.Identity.Name, Item.Name, fileExtension);
 
@@ -87,54 +86,6 @@ namespace Shop_Demo.Pages.Item
             {
                 await FileUploaded.CopyToAsync(stream);
             }
-        }
-
-
-        public string GetMimeType(string fileExtension)
-        {
-            var contentType = "";
-
-            switch (fileExtension)
-            {
-                case ".png":
-                    contentType = "image/png";
-                    break;
-                case ".jpg":
-                    contentType = "image/jpeg";
-                    break;
-                case ".jpeg":
-                    contentType = "image/jpeg";
-                    break;
-                case ".gif":
-                    contentType = "image/gif";
-                    break;
-                case ".pdf":
-                    contentType = "application/pdf";
-                    break;
-                case ".doc":
-                    contentType = "application/msword";
-                    break;
-                case ".docx":
-                    contentType = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
-                    break;
-                case ".txt":
-                    contentType = "text/plain";
-                    break;
-                case ".mp3":
-                    contentType = "audio/mpeg";
-                    break;
-                case ".mp4":
-                    contentType = "video/mp4";
-                    break;
-                case ".mpeg":
-                    contentType = "video/mpeg";
-                    break;
-                default:
-                    contentType = "application/octet";
-                    break;
-            }
-
-            return contentType;
         }
     }
 }

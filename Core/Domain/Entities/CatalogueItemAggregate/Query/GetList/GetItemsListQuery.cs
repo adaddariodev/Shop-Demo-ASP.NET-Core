@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Core.Domain.Entities.CatalogueItemAggregate;
 using Core.Persistence;
 using MediatR;
 using System;
@@ -9,7 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Core.Domain.Entities.CatalogueItemAggregate.Query
+namespace Core.Domain.Entities.CatalogueItemAggregate.Query.GetList
 {
     public class GetItemsListQuery : IRequest<List<CatalogueItemDTO>>
     {

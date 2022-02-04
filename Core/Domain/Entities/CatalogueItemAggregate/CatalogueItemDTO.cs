@@ -20,5 +20,10 @@ namespace Core.Domain.Entities.CatalogueItemAggregate
         [Required]
         [Display(Name = "Price")]
         public int Price { get; set; }
+
+        public string ImagePath { get; set; }
+
+        [Display(Name = "Created by")]
+        public string User { get; set; }
     }
 }

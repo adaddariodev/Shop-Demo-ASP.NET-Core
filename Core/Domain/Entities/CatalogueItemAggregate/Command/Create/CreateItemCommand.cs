@@ -9,9 +9,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
-using Core.Domain.Entities.CatalogueItemAggregate;
 
-namespace Core.Domain.Entities.CatalogueItemAggregate.Command
+namespace Core.Domain.Entities.CatalogueItemAggregate.Command.Create
 {
     public class CreateItemCommand : IRequest<CreateItemCommandResponse>
     {
