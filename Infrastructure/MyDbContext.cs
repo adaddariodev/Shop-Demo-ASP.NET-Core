@@ -1,13 +1,6 @@
-﻿using Core.Domain.Entities.Item;
-using Core.Domain.Entities.User;
-using Microsoft.AspNetCore.Http;
+﻿using Core.Domain.Entities.CatalogueItemAggregate;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure
 {

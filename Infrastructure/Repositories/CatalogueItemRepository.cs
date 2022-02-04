@@ -1,4 +1,4 @@
-﻿using Core.Domain.Entities.Item;
+﻿using Core.Domain.Entities.CatalogueItemAggregate;
 using Core.Persistence;
 using System;
 using System.Collections.Generic;

@@ -1,12 +1,7 @@
-﻿using Core.Domain.Entities.User;
-using CSharpFunctionalExtensions;
+﻿using CSharpFunctionalExtensions;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Core.Domain.Entities.Item
+namespace Core.Domain.Entities.CatalogueItemAggregate
 {
     public sealed class CatalogueItem : Entity
     {

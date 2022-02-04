@@ -3,7 +3,7 @@ using FluentValidation;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Core.Domain.Entities.Item.Command
+namespace Core.Domain.Entities.CatalogueItemAggregate.Command
 {
     internal class CreateItemCommandValidator : AbstractValidator<CreateItemCommand>
     {

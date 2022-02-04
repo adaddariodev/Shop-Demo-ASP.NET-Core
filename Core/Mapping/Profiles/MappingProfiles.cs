@@ -1,11 +1,5 @@
 ﻿using AutoMapper;
-using Core.Domain.Entities.Item;
-using Core.Domain.Entities.User;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Core.Domain.Entities.CatalogueItemAggregate;
 
 namespace Core.Mapping.Profiles
 {

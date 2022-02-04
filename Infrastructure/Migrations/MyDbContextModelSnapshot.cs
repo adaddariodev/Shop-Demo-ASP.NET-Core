@@ -19,7 +19,7 @@ namespace Infrastructure.Migrations
                 .HasAnnotation("ProductVersion", "5.0.13")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Core.Domain.Entities.Item.CatalogueItem", b =>
+            modelBuilder.Entity("Core.Domain.Entities.CatalogueItemAggregate.CatalogueItem", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()

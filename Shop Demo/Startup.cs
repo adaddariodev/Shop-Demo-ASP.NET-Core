@@ -13,6 +13,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Infrastructure;
+using Core;
 
 namespace Shop_Demo
 {
@@ -28,6 +29,9 @@ namespace Shop_Demo
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddApplicationServices(); //Core services
+            services.AddPersistenceServices(Configuration); //Infrastructure services
+
             services.AddDbContext<MyDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));

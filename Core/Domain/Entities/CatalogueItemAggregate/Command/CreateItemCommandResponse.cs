@@ -1,4 +1,4 @@
-﻿using Core.Domain.Entities.Item;
+﻿using Core.Domain.Entities.CatalogueItemAggregate;
 using Core.Responses;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Domain.Entities.User.Command.CreateUser
+namespace Core.Domain.Entities.CatalogueItemAggregate.Command
 {
     public class CreateItemCommandResponse : BaseResponse
     {

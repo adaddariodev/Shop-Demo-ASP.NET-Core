@@ -1,6 +1,6 @@
 ﻿using Core.Persistence;
-using Core.Services.FileService;
 using Infrastructure.Repositories;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,9 +23,6 @@ namespace Infrastructure
 
             //Repositories
             services.AddScoped<ICatalogueItemRepository, CatalogueItemRepository>();
-
-            //Services
-            services.AddScoped<IFileService, FileService>();
 
             return services;
         }

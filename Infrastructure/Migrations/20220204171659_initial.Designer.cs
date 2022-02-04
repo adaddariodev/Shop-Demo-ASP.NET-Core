@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20220201094043_initial")]
+    [Migration("20220204171659_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,7 +21,7 @@ namespace Infrastructure.Migrations
                 .HasAnnotation("ProductVersion", "5.0.13")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Core.Domain.Entities.Item.CatalogueItem", b =>
+            modelBuilder.Entity("Core.Domain.Entities.CatalogueItemAggregate.CatalogueItem", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()

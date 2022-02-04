@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Core.Domain.Entities.User.Command.CreateUser;
 using Core.Persistence;
 using MediatR;
 using System;
@@ -10,8 +9,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
+using Core.Domain.Entities.CatalogueItemAggregate;
 
-namespace Core.Domain.Entities.Item.Command
+namespace Core.Domain.Entities.CatalogueItemAggregate.Command
 {
     public class CreateItemCommand : IRequest<CreateItemCommandResponse>
     {
@@ -35,7 +35,7 @@ namespace Core.Domain.Entities.Item.Command
         private readonly ICatalogueItemRepository _catalogueItemRepository;
         private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public CreateItemCommandHandler(IMapper mapper, ICatalogueItemRepository catalogueItemRepository,IHttpContextAccessor httpContextAccessor)
+        public CreateItemCommandHandler(IMapper mapper, ICatalogueItemRepository catalogueItemRepository, IHttpContextAccessor httpContextAccessor)
         {
             _mapper = mapper;
             _catalogueItemRepository = catalogueItemRepository;
@@ -49,18 +49,18 @@ namespace Core.Domain.Entities.Item.Command
             var validator = new CreateItemCommandValidator(_catalogueItemRepository);
             var validationResult = await validator.ValidateAsync(request);
 
-            if(validationResult.Errors.Count > 0)
+            if (validationResult.Errors.Count > 0)
             {
                 createItemCommandResponse.Success = false;
                 createItemCommandResponse.ValidationErrors = new List<string>();
 
-                foreach(var error in validationResult.Errors)
+                foreach (var error in validationResult.Errors)
                 {
                     createItemCommandResponse.ValidationErrors.Add(error.ErrorMessage);
                 }
             }
 
-            if(createItemCommandResponse.Success)
+            if (createItemCommandResponse.Success)
             {
                 //get current
                 var user = _httpContextAccessor.HttpContext.User.Identity.Name;

@@ -1,4 +1,4 @@
-﻿using Core.Domain.Entities.Item;
+﻿using Core.Domain.Entities.CatalogueItemAggregate;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
