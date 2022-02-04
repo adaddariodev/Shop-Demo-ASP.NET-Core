@@ -3,6 +3,7 @@ using System.IO;
 using System.Threading.Tasks;
 using Core.Domain.Entities.CatalogueItemAggregate;
 using Core.Domain.Entities.CatalogueItemAggregate.Command;
+using Core.Domain.Entities.CatalogueItemAggregate.Command.Create;
 using MediatR;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;

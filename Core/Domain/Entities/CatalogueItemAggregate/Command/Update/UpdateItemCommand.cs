@@ -12,12 +12,14 @@ namespace Core.Domain.Entities.CatalogueItemAggregate.Command.Update
 {
     public class UpdateItemCommand : IRequest<UpdateItemCommandResponse>
     {
-        public UpdateItemCommand(CatalogueItemDTO item)
+        public UpdateItemCommand(CatalogueItemDTO item, long id)
         {
             Item = item;
+            Id = id;
         }
 
         public CatalogueItemDTO Item { get; }
+        public long Id { get; }
     }
 
     public class UpdateProdottoCommandHandler : IRequestHandler<UpdateItemCommand, UpdateItemCommandResponse>

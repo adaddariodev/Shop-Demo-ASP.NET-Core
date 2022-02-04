@@ -1,5 +1,6 @@
 using Core.Domain.Entities.CatalogueItemAggregate;
 using Core.Domain.Entities.CatalogueItemAggregate.Query;
+using Core.Domain.Entities.CatalogueItemAggregate.Query.GetById;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;

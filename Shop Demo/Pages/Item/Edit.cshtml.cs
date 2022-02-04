@@ -1,4 +1,5 @@
 ﻿using Core.Domain.Entities.CatalogueItemAggregate;
+using Core.Domain.Entities.CatalogueItemAggregate.Command.Update;
 using Core.Domain.Entities.CatalogueItemAggregate.Query.GetById;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -19,12 +20,16 @@ namespace MenuOnline.UI.Pages.Prodotto
         [BindProperty]
         public CatalogueItemDTO Item { get; set; }
 
+        public long Id { get; set; }
+
         public async Task<IActionResult> OnGetAsync(long? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
+
+            Id = (long)id;
 
             Item = await _mediator.Send(new GetItemByIdQuery((long)id));
 
@@ -43,7 +48,7 @@ namespace MenuOnline.UI.Pages.Prodotto
                 return Page();
             }
 
-            var result = await _mediator.Send(new UpdateProdottoCommand(Prodotto));
+            var result = await _mediator.Send(new UpdateItemCommand(Item, Id));
 
             return RedirectToPage("./Index", result);
         }
