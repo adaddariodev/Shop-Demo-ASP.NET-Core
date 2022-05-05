@@ -136,3 +136,9 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
     color: #7F7F7F;
 }
+
+.card-img-top {
+    max-width: 200px !important;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}

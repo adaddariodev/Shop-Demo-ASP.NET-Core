@@ -24,7 +24,7 @@ namespace Shop_Demo.Pages
 
         public async Task<IActionResult> OnGetAsync()
         {
-           ItemList = await _mediator.Send(new GetAllItemsQuery());
+            ItemList = await _mediator.Send(new GetAllItemsQuery());
 
             return Page();
         }

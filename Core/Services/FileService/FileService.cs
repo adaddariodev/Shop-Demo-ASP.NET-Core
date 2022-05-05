@@ -22,7 +22,7 @@ namespace Core.Services.FileService
         }
 
 
-        public string GetMimeType(string fileExtension)
+        public Task<string> GetMimeType(string fileExtension)
         {
             var contentType = "";
 
@@ -66,7 +66,7 @@ namespace Core.Services.FileService
                     break;
             }
 
-            return contentType;
+            return Task.FromResult(contentType);
         }
 
 

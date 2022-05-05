@@ -16,6 +16,7 @@ namespace Core
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddMediatR(Assembly.GetExecutingAssembly());
+            //services.AddScoped<IFileService, FileService>();
 
             return services;
         }

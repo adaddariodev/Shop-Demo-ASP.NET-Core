@@ -27,7 +27,7 @@ namespace Core.Domain.Entities.CatalogueItemAggregate.Command.Create
             RuleFor(r => r.ImagePath)
                 .NotEmpty().WithMessage("{PropertyName} is required.")
                 .NotNull()
-                .MaximumLength(100).WithMessage("Maximum lenght 100 characters.");
+                .MaximumLength(500).WithMessage("Maximum lenght 500 characters.");
 
             RuleFor(r => r.Price)
                 .GreaterThanOrEqualTo(0).WithMessage("{PropertyName} needs to be grater than 0.");

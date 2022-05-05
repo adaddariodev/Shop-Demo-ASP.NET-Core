@@ -12,7 +12,6 @@ namespace Core.Domain.Entities.CatalogueItemAggregate.Query.GetAll
     {
         public GetAllItemsQuery()
         {
-
         }
     }
 

@@ -21,14 +21,14 @@
     <div class="row">
         @foreach (var item in Model.ItemList)
         {
-            <div class="col-2">
+            <div class="col-auto">
                 <div class="card">
                     <img src="@item.ImagePath" class="card-img-top">
                     <div class="card-body text-center">
-                        <h5 class="card-title">@item.Name</h5>
-                        <p class="fw-bold">@item.Price</p>
-                        <p class="card-text">@item.Description</p>
-                        <p class="small">@item.Id</p>
+                        <h5 class="card-title border-bottom pb-1">@item.Name</h5>
+                        <p>€ @item.Price</p>
+                        <p class="card-text fst-italic">@item.Description</p>
+                        <p class="small text-dark-50">@item.Id</p>
                     </div>
                 </div>
             </div>

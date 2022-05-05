@@ -19,5 +19,5 @@ namespace Core.Domain.Entities.CatalogueItemAggregate
         public double Price { get; private set; }
         public string ImagePath { get; private set; }
         public string User { get; set; }
-    }
+    }    
 }

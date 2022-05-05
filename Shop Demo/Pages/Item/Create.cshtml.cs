@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Core.Domain.Entities.CatalogueItemAggregate;
 using Core.Domain.Entities.CatalogueItemAggregate.Command;
 using Core.Domain.Entities.CatalogueItemAggregate.Command.Create;
+using Core.Services.FileService;
 using MediatR;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -17,13 +18,10 @@ namespace Shop_Demo.Pages.Item
         private readonly IWebHostEnvironment _hostingEnvironment;
         private readonly IMediator _mediator;
 
-        //private readonly IFileService _fileService;
-
-        public CreateModel(/*IFileService fileService,*/ IWebHostEnvironment hostingEnvironment, IMediator mediator)
+        public CreateModel(IWebHostEnvironment hostingEnvironment, IMediator mediator)
         {
             _hostingEnvironment = hostingEnvironment;
             _mediator = mediator;
-            //_fileService = fileService;
         }
 
         [BindProperty]
@@ -32,6 +30,8 @@ namespace Shop_Demo.Pages.Item
 
         [BindProperty]
         public CatalogueItemDTO Item { get; set; }
+
+        public string Response { get; set; }
 
         public async Task<IActionResult> OnGet()
         {
@@ -55,13 +55,24 @@ namespace Shop_Demo.Pages.Item
             {
                 if (FileUploaded.Length > 0)
                 {
-                    var fileExtension = Path.GetExtension(Item.Name);
+                    //Save the item record into DB
 
-                    var path = Path.Combine(_hostingEnvironment.WebRootPath, "Uploads", HttpContext.User.Identity.Name, Item.Name, fileExtension);
+                    //var fileExtension = Path.GetExtension(FileUploaded.FileName);
 
-                    await _mediator.Send(new CreateItemCommand(Item.Name, Item.Description, Item.Price, path));
+                    var path = Path.Combine(/*_hostingEnvironment.WebRootPath, */"Uploads", HttpContext.User.Identity.Name, FileUploaded.FileName);
 
-                    await SaveUploadedFileAsync();
+                    var response = await _mediator.Send(new CreateItemCommand(Item.Name, Item.Description, Item.Price, path));
+                    
+                    if(!response.Success)
+                    {
+                        Response = response.Message;
+                        return Page();
+                    }else
+                    {
+                        //Save file in directory
+                        await SaveUploadedFileAsync();
+                    }
+                    
                 }
 
                 return RedirectToPage("../Index");
@@ -87,6 +98,53 @@ namespace Shop_Demo.Pages.Item
             {
                 await FileUploaded.CopyToAsync(stream);
             }
+        }
+
+        private string GetMimeType(string fileExtension)
+        {
+            var contentType = "";
+
+            switch (fileExtension)
+            {
+                case ".png":
+                    contentType = "image/png";
+                    break;
+                case ".jpg":
+                    contentType = "image/jpeg";
+                    break;
+                case ".jpeg":
+                    contentType = "image/jpeg";
+                    break;
+                case ".gif":
+                    contentType = "image/gif";
+                    break;
+                case ".pdf":
+                    contentType = "application/pdf";
+                    break;
+                case ".doc":
+                    contentType = "application/msword";
+                    break;
+                case ".docx":
+                    contentType = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+                    break;
+                case ".txt":
+                    contentType = "text/plain";
+                    break;
+                case ".mp3":
+                    contentType = "audio/mpeg";
+                    break;
+                case ".mp4":
+                    contentType = "video/mp4";
+                    break;
+                case ".mpeg":
+                    contentType = "video/mpeg";
+                    break;
+                default:
+                    contentType = "application/octet";
+                    break;
+            }
+
+            return contentType;
         }
     }
 }

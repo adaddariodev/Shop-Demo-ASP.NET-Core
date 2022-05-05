@@ -15,7 +15,7 @@ namespace Infrastructure.Configurations
         {
             builder.Property(p => p.ImagePath)
                 .IsRequired()
-                .HasMaxLength(100);
+                .HasMaxLength(500);
 
             builder.Property(p => p.Name)
                 .IsRequired()
