@@ -1,29 +1,32 @@
-﻿using MediatR;
+﻿using Core.Domain.Entities.CatalogueItemAggregate;
+using Core.Domain.Entities.CatalogueItemAggregate.Query.GetAll;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Shop_Demo.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+        private readonly IMediator _mediator;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(IMediator mediator)
         {
-            _logger = logger;
+            _mediator = mediator;
         }
 
         [BindProperty(SupportsGet = true)]
         public string Handler { get; set; }
 
-        public void OnGet()
+        public IList<CatalogueItemDTO> ItemList { get; set; }
+
+        public async Task<IActionResult> OnGetAsync()
         {
-            
+           ItemList = await _mediator.Send(new GetAllItemsQuery());
+
+            return Page();
         }
     }
 }

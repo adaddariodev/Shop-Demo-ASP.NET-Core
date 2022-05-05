@@ -10,5 +10,6 @@ namespace Core.Persistence
     public interface ICatalogueItemRepository : IAsyncRepository<CatalogueItem>
     {
         Task<bool> ItemExist(long id);
+        Task<IList<CatalogueItem>> GetByFilter(string filter);
     }
 }

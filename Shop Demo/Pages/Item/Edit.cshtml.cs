@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Threading.Tasks;
 
-namespace MenuOnline.UI.Pages.Prodotto
+namespace Shop_Demo.Pages.Item
 {
     public class EditModel : PageModel
     {

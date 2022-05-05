@@ -18,8 +18,17 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
+                        @*<li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Item/Create">Create Item</a>
+                        </li>*@
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                                Item
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" asp-area="" asp-page="/Item/Create">Create</a>
+                                <a class="dropdown-item" asp-area="" asp-page="/Item/Search">Search</a>
+                            </div>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />

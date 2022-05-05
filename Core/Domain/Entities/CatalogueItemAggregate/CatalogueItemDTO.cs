@@ -9,6 +9,8 @@ namespace Core.Domain.Entities.CatalogueItemAggregate
 {
     public class CatalogueItemDTO
     {
+        public long Id { get; set; }
+
         [Required]
         [Display(Name = "Item Name")]
         public string Name { get; set; }
@@ -19,7 +21,8 @@ namespace Core.Domain.Entities.CatalogueItemAggregate
 
         [Required]
         [Display(Name = "Price")]
-        public int Price { get; set; }
+        [DataType(DataType.Currency)]
+        public double Price { get; set; }
 
         public string ImagePath { get; set; }
 

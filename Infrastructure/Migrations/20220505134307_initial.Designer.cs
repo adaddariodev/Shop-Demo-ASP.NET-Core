@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20220204171659_initial")]
+    [Migration("20220505134307_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -42,8 +42,7 @@ namespace Infrastructure.Migrations
                         .HasColumnType("nvarchar(20)");
 
                     b.Property<double>("Price")
-                        .HasPrecision(5)
-                        .HasColumnType("float(5)");
+                        .HasColumnType("float");
 
                     b.Property<string>("User")
                         .IsRequired()

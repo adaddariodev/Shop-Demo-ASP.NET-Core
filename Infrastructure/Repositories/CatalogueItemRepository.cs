@@ -15,6 +15,13 @@ namespace Infrastructure.Repositories
 
         }
 
+        public async Task<IList<CatalogueItem>> GetByFilter(string filter)
+        {
+            return _myDbContext.Set<CatalogueItem>()
+                .Where(x => x.Name.Contains(filter))
+                .ToList();
+        }
+
         public async Task<bool> ItemExist(long id)
         {
             return _myDbContext.Set<CatalogueItem>()

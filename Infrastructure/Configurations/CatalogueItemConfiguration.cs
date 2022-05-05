@@ -22,8 +22,7 @@ namespace Infrastructure.Configurations
                 .HasMaxLength(20);
 
             builder.Property(p => p.Price)
-                .IsRequired()
-                .HasPrecision(5);
+                .IsRequired();
 
             builder.Property(p => p.User)
                 .IsRequired()

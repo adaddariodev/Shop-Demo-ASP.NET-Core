@@ -5,41 +5,42 @@
     ViewData["Title"] = "Create Item";
 }
 
-<div class="row">
-    <div class="col">
-        <h3 class="text-center">New Catalogue Item</h3>
-    </div>
-</div>
-
 <div class="row d-flex justify-content-center">
     <div class="col-4">
-
-        <div class="card mt-5 pt-5 pb-5">
+        <div class="card mt-5 pt-2 pb-5">
             <div class="card-body text-center">
+
+                <div class="row">
+                    <div class="col">
+                        <h3 class="text-center">Create Item</h3>
+                    </div>
+                </div>
 
                 <form enctype="multipart/form-data" method="post">
 
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-
-                    <div class="form-row d-flex justify-content-center">
+                    <div class="form-row d-flex justify-content-center mt-3">
                         <label asp-for="Item.Name"></label>
                         <input asp-for="Item.Name" class="form-control" />
+                        <span asp-validation-for="Item.Name" class="text-danger"></span>
                     </div>
 
-                    <div class="form-row d-flex justify-content-center">
+                    <div class="form-row d-flex justify-content-center mt-3">
                         <label asp-for="Item.Description"></label>
                         <input asp-for="Item.Description" class="form-control" />
+                        <span asp-validation-for="Item.Description" class="text-danger"></span>
                     </div>
 
-                    <div class="form-row d-flex justify-content-center">
+                    <div class="form-row d-flex justify-content-center mt-3">
                         <label asp-for="Item.Price"></label>
                         <input asp-for="Item.Price" class="form-control" />
+                        <span asp-validation-for="Item.Price" class="text-danger"></span>
                     </div>
 
-                    <div class="form-row d-flex justify-content-center mt-3 mx-auto">
+                    <div class="form-row d-flex mt-3 mx-auto">
                         <input class="form-control-file" asp-for="FileUploaded" type="file">
-                        <span asp-validation-for="FileUploaded"></span>
+                        <span asp-validation-for="FileUploaded" class="text-danger"></span>
                     </div>
 
                     <hr class="mt-5" />
@@ -57,5 +58,7 @@
 
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
 }

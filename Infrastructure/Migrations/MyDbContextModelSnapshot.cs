@@ -40,8 +40,7 @@ namespace Infrastructure.Migrations
                         .HasColumnType("nvarchar(20)");
 
                     b.Property<double>("Price")
-                        .HasPrecision(5)
-                        .HasColumnType("float(5)");
+                        .HasColumnType("float");
 
                     b.Property<string>("User")
                         .IsRequired()

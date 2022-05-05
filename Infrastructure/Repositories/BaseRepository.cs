@@ -36,7 +36,7 @@ namespace Infrastructure.Repositories
             return await _myDbContext.Set<T>().FindAsync(id);
         }
 
-        public async Task<IReadOnlyList<T>> ListAllAsync()
+        public async Task<IList<T>> ListAllAsync()
         {
             return await _myDbContext.Set<T>().ToListAsync();
         }

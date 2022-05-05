@@ -54,7 +54,7 @@ namespace Infrastructure.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Price = table.Column<double>(type: "float(5)", precision: 5, nullable: false),
+                    Price = table.Column<double>(type: "float", nullable: false),
                     ImagePath = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     User = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
